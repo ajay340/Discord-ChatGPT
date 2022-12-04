@@ -20,7 +20,7 @@ var (
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatalln("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 	var bot_token string = os.Getenv("BOT_TOKEN")
 	botSession, err = discordgo.New("Bot " + bot_token)
@@ -59,6 +59,8 @@ func main() {
 	if err != nil {
 		log.Fatalln("error opening connection,", err)
 	}
+
+	botSession.UpdateListeningStatus("/chat")
 
 	addCommands(botSession)
 

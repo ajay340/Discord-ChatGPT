@@ -23,6 +23,7 @@ var COMMANDS []*discordgo.ApplicationCommand = []*discordgo.ApplicationCommand{
 	},
 }
 
+
 var commandHandlers = map[string]func(session *discordgo.Session, i *discordgo.InteractionCreate){
 
 	"chat": func(session *discordgo.Session, i *discordgo.InteractionCreate) {
